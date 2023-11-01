@@ -24,16 +24,16 @@ string[] ReadStringArray(string text)
     return result;
 }
 
-string[] ShortOnly(string[] tmpArray)
+string[] ShortOnly(string[] tmpArray, int desLength)
 {
     int count = 0;
-    foreach (string tmpStr in tmpArray){if (tmpStr.Length <= 3){count++;}}
+    foreach (string tmpStr in tmpArray){if (tmpStr.Length <= desLength){count++;}}
     string[] result = new string[count];
 
     count = 0;
     foreach (string tmpStr in tmpArray)
     {
-        if (tmpStr.Length <= 3)
+        if (tmpStr.Length <= desLength)
         {
             result[count] = tmpStr;
             count++;    
@@ -48,7 +48,7 @@ void Main()
     // PrintArray(arrInput);
     // Console.WriteLine();
 
-    string[] arrResult = ShortOnly(arrInput);
+    string[] arrResult = ShortOnly(arrInput, 3);
     PrintArray(arrResult);
     Console.WriteLine();
 }
