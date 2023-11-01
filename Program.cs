@@ -27,7 +27,7 @@ string[] ReadStringArray(string text)
 string[] ShortOnly(string[] tmpArray)
 {
     int count = 0;
-    foreach (string tmpStr in tmpArray){count++;};
+    foreach (string tmpStr in tmpArray){if (tmpStr.Length <= 3){count++;}}
     string[] result = new string[count];
 
     count = 0;
@@ -44,7 +44,7 @@ string[] ShortOnly(string[] tmpArray)
 
 void Main()
 {
-    // string[] arrInput = ReadStringArray("Введите слова через запятую:");
+    string[] arrInput = ReadStringArray("Введите слова через запятую:");
     // PrintArray(arrInput);
     // Console.WriteLine();
 
